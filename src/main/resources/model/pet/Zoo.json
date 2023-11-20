@@ -1,0 +1,9 @@
+{
+  "type": "array",
+  "items": {
+    "anyOf": [
+      { "$ref": "./Dog.yml" },
+      { "$ref": "./Cat.json" }
+    ]
+  }
+}
