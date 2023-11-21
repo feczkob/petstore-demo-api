@@ -32,7 +32,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "./model/pet/Pets.yml"
+                $ref: "./schemas/Pets.yml"
         default:
           description: unexpected error
           content:
@@ -72,7 +72,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "./model/pet/Dog.yml"
+                $ref: "./schemas/Dog.yml"
         default:
           description: unexpected error
           content:
