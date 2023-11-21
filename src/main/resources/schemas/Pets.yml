@@ -3,3 +3,4 @@ items:
   anyOf:
     - $ref: "./Dog.yml"
     - $ref: "./Cat.json"
+    - $ref: "./../model/Cat.json"

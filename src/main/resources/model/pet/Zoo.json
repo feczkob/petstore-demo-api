@@ -4,7 +4,7 @@
     "anyOf": [
       { "$ref": "./../../schemas/Dog.yml" },
       { "$ref": "./../../schemas/Cat.json" },
-      { "$ref": "./Cat.json" }
+      { "$ref": "./../Cat.json" }
     ]
   }
 }
