@@ -1,6 +1,6 @@
 type: array
 items:
   anyOf:
-    - $ref: "./../schemas/Dog.yml"
+    - $ref: "./Dog.yml"
     - $ref: "./Cat.json"
     - $ref: "./../model/Cat.json"
