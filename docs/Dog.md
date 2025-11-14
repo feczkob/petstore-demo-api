@@ -1,14 +1,15 @@
 
 
-# Error
+# Dog
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**code** | **Integer** |  |  |
-|**message** | **String** |  |  |
+|**id** | **Long** |  |  |
+|**name** | **String** |  |  |
+|**tag** | **String** |  |  [optional] |
 
 
 

@@ -2,11 +2,11 @@
 
 All URIs are relative to *http://petstore.swagger.io/v1*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**createPets**](PetsApi.md#createPets) | **POST** /pets | Create a pet
-[**listPets**](PetsApi.md#listPets) | **GET** /pets | List all pets
-[**showPetById**](PetsApi.md#showPetById) | **GET** /pets/{petId} | Info for a specific pet
+| Method | HTTP request | Description |
+|------------- | ------------- | -------------|
+| [**createPets**](PetsApi.md#createPets) | **POST** /pets | Create a pet |
+| [**listPets**](PetsApi.md#listPets) | **GET** /pets | List all pets |
+| [**showPetById**](PetsApi.md#showPetById) | **GET** /pets/{petId} | Info for a specific pet |
 
 
 
@@ -62,6 +62,7 @@ No authorization required
 - **Content-Type**: Not defined
 - **Accept**: application/json
 
+
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
@@ -71,7 +72,7 @@ No authorization required
 
 ## listPets
 
-> List&lt;Pet&gt; listPets(limit)
+> List&lt;PetsInner&gt; listPets(limit)
 
 List all pets
 
@@ -93,7 +94,7 @@ public class Example {
         PetsApi apiInstance = new PetsApi(defaultClient);
         Integer limit = 56; // Integer | How many items to return at one time (max 100)
         try {
-            List<Pet> result = apiInstance.listPets(limit);
+            List<PetsInner> result = apiInstance.listPets(limit);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling PetsApi#listPets");
@@ -109,13 +110,13 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **limit** | **Integer**| How many items to return at one time (max 100) | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **limit** | **Integer**| How many items to return at one time (max 100) | [optional] |
 
 ### Return type
 
-[**List&lt;Pet&gt;**](Pet.md)
+[**List&lt;PetsInner&gt;**](PetsInner.md)
 
 ### Authorization
 
@@ -126,6 +127,7 @@ No authorization required
 - **Content-Type**: Not defined
 - **Accept**: application/json
 
+
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
@@ -135,7 +137,7 @@ No authorization required
 
 ## showPetById
 
-> Pet showPetById(petId)
+> Dog showPetById(petId)
 
 Info for a specific pet
 
@@ -157,7 +159,7 @@ public class Example {
         PetsApi apiInstance = new PetsApi(defaultClient);
         String petId = "petId_example"; // String | The id of the pet to retrieve
         try {
-            Pet result = apiInstance.showPetById(petId);
+            Dog result = apiInstance.showPetById(petId);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling PetsApi#showPetById");
@@ -173,13 +175,13 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **petId** | **String**| The id of the pet to retrieve |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **petId** | **String**| The id of the pet to retrieve | |
 
 ### Return type
 
-[**Pet**](Pet.md)
+[**Dog**](Dog.md)
 
 ### Authorization
 
@@ -189,6 +191,7 @@ No authorization required
 
 - **Content-Type**: Not defined
 - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
