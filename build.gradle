@@ -8,7 +8,13 @@ plugins {
 group 'com.petstore'
 version '0.1'
 
-sourceCompatibility = JavaVersion.VERSION_17
+java {
+    sourceCompatibility = JavaVersion.VERSION_21
+    targetCompatibility = JavaVersion.VERSION_21
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
 
 repositories {
     mavenCentral()
@@ -17,7 +23,7 @@ repositories {
 def petstoreApiYml = "$rootDir/src/main/resources/petstore-api.yml".toString()
 
 /* java client configuration */
-tasks.register('buildPetStoreJavaClient', GenerateTask) {
+openApiGenerate {
     generatorName = "java"
     inputSpec = petstoreApiYml
     outputDir = "$buildDir/java-client".toString()
@@ -44,7 +50,7 @@ tasks.register('buildPetStoreJavaClient', GenerateTask) {
 }
 
 tasks.register('generateCode', Copy) {
-    dependsOn['buildPetStoreJavaClient']
+    dependsOn tasks.named('openApiGenerate')
 
     def srcPath = "$buildDir/java-client"
     def targetPath = "$rootDir/docs"
@@ -56,7 +62,9 @@ tasks.register('generateCode', Copy) {
 }
 
 // code will be generated during compilation
-compileJava.dependsOn(generateCode)
+tasks.named('compileJava') {
+    dependsOn tasks.named('generateCode')
+}
 
 
 // attach the generated folder as source for this project
